@@ -1,0 +1,33 @@
+
+    <div class="row">
+       <div class="col-md-4" *ngFor = "let p of postArray; index as i">
+            <div class="card my-5">
+                <div class="card-header"
+                [ngClass] = "{
+                    'bg-primary' : i % 2 === 0,
+                    'bg-secondary' : i % 2 !== 0
+                }"
+                >
+                    <h3>
+                        {{p.title}}
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <p>
+                        {{p.body}}
+                    </p>
+                </div>
+                <div class="card-footer d-flex justify-content-between"
+                [ngClass] = "{
+                    'bg-primary' : i % 2 === 0,
+                    'bg-secondary' : i % 2 !== 0
+                }"
+                >
+                    <button class="btn btn-success">Edit</button>
+                    <button class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+       </div>
+       
+    </div>
+
